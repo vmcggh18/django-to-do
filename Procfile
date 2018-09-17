@@ -1,1 +1,1 @@
-web: python run.py
+web: gunicorn test-django-to-do.wsgi:application
