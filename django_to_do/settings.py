@@ -26,9 +26,12 @@ SECRET_KEY = 'z2o+6e*ob6_od&^&(+z4t7&_!_0zp5gd*7id(k*ww*v^9r)ds8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-to-do-theweaverc9.c9users.io',
-'test-django-to-do.herokuapp.com']
+ALLOWED_HOSTS = [os.environ.get ('C9_HOSTNAME'), 
+                os.environ.get ('HOSTNAME')]
 
+host = os.environ.get('SITE_HOST')
+if host:
+    ALLOWED_HOSTS.append(host)
 
 # Application definition
 
@@ -82,7 +85,7 @@ WSGI_APPLICATION = 'django_to_do.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-DATABASES = {'default': dj_database_url.parse('postgres://merhasajzwyifw:0ab1fc04e488ad44de2b2542f104850089c4bbf0a1edff31d2a5725453092b85@ec2-46-51-184-229.eu-west-1.compute.amazonaws.com:5432/d95u0va8kmh2o9')}
+DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
 
 # Password validation
