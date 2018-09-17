@@ -27,7 +27,7 @@ SECRET_KEY = 'z2o+6e*ob6_od&^&(+z4t7&_!_0zp5gd*7id(k*ww*v^9r)ds8'
 DEBUG = True
 
 ALLOWED_HOSTS = ['django-to-do-theweaverc9.c9users.io',
-'test-django_to_do.herokuapp.com']
+'test-django-to-do.herokuapp.com']
 
 
 # Application definition
